@@ -1,38 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 100;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.navbar input[type="search"] {
+  width: 250px;
+  padding: 8px;
+  border: none;
+  background-color: #4e4e4e;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 50px;
+  font-weight: 500;
+}
+
+.navbar input[type="search"]::placeholder {
+  color: #bdc3c7;
+  font-weight: 400;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar h1 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .navbar input[type="text"] {
+    margin-bottom: 10px;
+  }
+}
+
 .App {
+  margin: 70px 0 50px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .App {
+    margin: 120px 0 50px;
+  }
+}
+
+/* Product list styles */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.product-card {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.product-card .img-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-card img {
+  max-width: 100%;
+  height: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-card h2 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #505353;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.product-card .description {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #6c7272;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-card .price {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #505353;
 }
